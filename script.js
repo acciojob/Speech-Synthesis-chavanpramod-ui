@@ -1,8 +1,4 @@
-// Your script here.
-Here is the JavaScript code with all comments removed:
-
-```javascript
-  const msg = new SpeechSynthesisUtterance();
+const msg = new SpeechSynthesisUtterance();
   let voices = [];
   const voicesDropdown = document.querySelector('[name="voice"]');
   const options = document.querySelectorAll('[type="range"], [name="text"]');
@@ -35,6 +31,8 @@ Here is the JavaScript code with all comments removed:
   }
 
   window.speechSynthesis.addEventListener('voiceschanged', populateVoices);
+  window.speechSynthesis.onvoiceschanged = populateVoices;
+
   voicesDropdown.addEventListener('change', setVoice);
   options.forEach(option => option.addEventListener('change', setOption));
   
@@ -42,7 +40,3 @@ Here is the JavaScript code with all comments removed:
   stopButton.addEventListener('click', () => toggle(false));
 
   populateVoices();
-
-```
-
-Would you like to test or modify any other parts of this application?
